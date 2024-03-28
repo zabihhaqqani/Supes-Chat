@@ -3,6 +3,8 @@
 
 A Social Media application to login as a SuperHero from DC Comics. 
 
+![chrome-capture-2024-3-28](https://github.com/zabihhaqqani/Supes-Chat/assets/53895282/c56c02d9-ede8-431d-891f-50c2dfd26a69)
+
 ### Live Preview: [Supes-Chat](https://supes-chat.vercel.app)
 
 ![image](https://github.com/zabihhaqqani/Supes-Chat/assets/53895282/d2ab77f8-6fcd-452c-b3e4-86af09bb9e64)
