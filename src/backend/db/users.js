@@ -42,23 +42,23 @@ export const users = [
     backgroundImg:
       "https://fastly.picsum.photos/id/20/3670/2462.jpg?hmac=CmQ0ln-k5ZqkdtLvVO23LjVAEabZQx2wOaT4pyeG10I",
   },
-  {
-    _id: 3,
-    firstName: "Oliver",
-    lastName: "Queen",
-    username: "greenarrow",
-    email: "oliverqueen@queenindustries.com",
-    password: "arrow123",
-    bio: "The Emerald Archer",
-    website: "https://greenarrow.com/",
-    createdAt: "2022-03-03T10:15:12+05:30",
-    updatedAt: formatDate(),
-    bookmarks: [],
-    avatar:
-      "https://res.cloudinary.com/ddaygqgu3/image/upload/v1711419376/Screenshot_2024-03-26_031913_md91lv.png",
-    backgroundImg:
-      "https://fastly.picsum.photos/id/24/4855/1803.jpg?hmac=ICVhP1pUXDLXaTkgwDJinSUS59UWalMxf4SOIWb9Ui4",
-  },
+  // {
+  //   _id: 3,
+  //   firstName: "Oliver",
+  //   lastName: "Queen",
+  //   username: "greenarrow",
+  //   email: "oliverqueen@queenindustries.com",
+  //   password: "arrow123",
+  //   bio: "The Emerald Archer",
+  //   website: "https://greenarrow.com/",
+  //   createdAt: "2022-03-03T10:15:12+05:30",
+  //   updatedAt: formatDate(),
+  //   bookmarks: [],
+  //   avatar:
+  //     "https://res.cloudinary.com/ddaygqgu3/image/upload/v1711419376/Screenshot_2024-03-26_031913_md91lv.png",
+  //   backgroundImg:
+  //     "https://fastly.picsum.photos/id/24/4855/1803.jpg?hmac=ICVhP1pUXDLXaTkgwDJinSUS59UWalMxf4SOIWb9Ui4",
+  // },
   {
     _id: 4,
     firstName: "Barry",

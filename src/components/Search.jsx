@@ -1,19 +1,8 @@
-import React, { useState } from "react";
-import {
-  Command,
-  CommandDialog,
-  CommandEmpty,
-  CommandGroup,
-  CommandInput,
-  CommandItem,
-  CommandList,
-  CommandSeparator,
-  CommandShortcut,
-} from "./ui/command";
-import { useDataContext } from "../context/dataContext";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Input } from "./ui/input";
+import { useDataContext } from "../context/dataContext";
 import AvatarIcon from "./AvatarIcon";
+import { Input } from "./ui/input";
 
 const Search = () => {
   const { dataState } = useDataContext();
@@ -29,11 +18,8 @@ const Search = () => {
   );
 
   return (
-    <div className="text-black">
+    <div>
       <div>
-        {/* {searchTerm && <span className="clear-icon" onClick={handleClearClick}>
-            &#10006;
-          </span>} */}
         <Input
           placeholder="Search Hero"
           className="w-[230px] focus:outline-none"
@@ -42,7 +28,7 @@ const Search = () => {
           onChange={(e) => setSearchTerm(e.target.value)}
         />
       </div>
-      <div className="absolute bg-white rounded-sm  z-[100] w-[230px]">
+      <div className="absolute bg-white text-black rounded-sm  z-[100] w-[230px]">
         {searchTerm &&
           filteredSearch?.map(
             ({ _id, username, firstName, lastName, avatar }) => (

@@ -13,11 +13,11 @@ import LikedPosts from "./pages/LikedPosts";
 import Login from "./pages/Login";
 import { SignUp } from "./pages/Signup";
 import UserProfilePage from "./pages/UserProfilePage";
-import { useDataContext } from "./context/dataContext";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   const { authState } = useAuthContext();
-  const { dataDispatch } = useDataContext();
+
   const { token } = authState;
   return (
     <div className="md:text-[16px]  text-[15px]">
@@ -60,7 +60,18 @@ function App() {
         <Route path="/page-not-found" element={<Error />} />
         {/* <Route path="*" element={<Navigate to={"/page-not-found"} />} /> */}
       </Routes>
-
+      <ToastContainer
+        position="bottom-right"
+        autoClose={1000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />{" "}
       <Toaster />
     </div>
   );

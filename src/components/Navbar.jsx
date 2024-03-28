@@ -12,7 +12,7 @@ const Navbar = () => {
   return (
     <div className="flex justify-evenly p-2 items-center shadow-md mb-2">
       <div onClick={() => navigate("/")}>
-        <h3 className="text-[22px]">CC</h3>
+        <h3 className="text-[22px] font-black">SC</h3>
       </div>
 
       <Search />

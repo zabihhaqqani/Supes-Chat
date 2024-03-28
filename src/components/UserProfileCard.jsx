@@ -16,22 +16,14 @@ const UserProfileCard = ({ userProfile }) => {
   const { userLogout, authState } = useAuthContext();
 
   const [modalState, setModalState] = useState(false);
-  const navigate = useNavigate();
-  // const { _id,firstName, lastName, username, email, bio ,following,followers} = userProfile;
   const userLoggedIn = authState?.user?.username === userProfile?.username;
 
   const userPosts = getUserPosts(dataState?.posts, userProfile);
 
   const onClose = () => setModalState(false);
 
-  console.log(dataState);
   return (
-    <div
-      className="p-2 bg-cover lg:w-[450px] w-full flex justify-center flex-col"
-      // style={{
-      //   backgroundImage: `url('${userProfile?.backgroundImg}')`,
-      // }}
-    >
+    <div className="p-2 bg-cover lg:w-[450px] w-full flex justify-center flex-col">
       <div className="flex justify-between items-center ">
         <img
           src={
@@ -48,11 +40,10 @@ const UserProfileCard = ({ userProfile }) => {
             dataDispatch={dataDispatch}
             token={authState?.token}
             closeModal={onClose}
-            // website={}
           />
         ) : (
           <Button
-            style={{ height: "50%" }}
+            className="w-[100px]"
             onClick={(e) => {
               if (userFollowed(dataState?.users, userProfile?._id)) {
                 unFollowUserHandler(

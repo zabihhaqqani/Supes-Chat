@@ -42,7 +42,7 @@ const Login = () => {
         onSubmit={loginHandler}
         className="flex flex-col w-[85%] gap-3 md:w-[350px] lg:w-[400px]"
       >
-        <h3 className="flex items-center gap-2 font-bold text-lg">
+        <h3 className="flex items-center gap-2 font-bold text-lg ">
           Welcome back, hero <img className="w-[35px]" src={logo} alt="logo" />
         </h3>
         <Input
