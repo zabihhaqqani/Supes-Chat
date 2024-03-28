@@ -1,55 +1,34 @@
-import { ScrollArea } from "./ui/scroll-area";
+import { useDataContext } from "../context/dataContext";
 import { Button } from "./ui/button";
-import batIcon from "../assets/icons8-bat.gif";
+import { ScrollArea } from "./ui/scroll-area";
 
 const HeroList = ({ loginAsGuest, showList, setShowList }) => {
+  const { dataState } = useDataContext();
   return (
-    <div className="absolute bg-white p-5 h-[450px] w-[400px]">
-      <ScrollArea className="h-[300px] w-[350px] rounded-md p-4 top-0">
+    <div className="absolute bg-white p-5 h-[] w-[90%] z-30 md:w-[450px]">
+      <Button
+        onClick={() => setShowList(!showList)}
+        className=" right-0 top-0 m-3"
+        variant="default"
+      >
+        X
+      </Button>
+      <ScrollArea className="h-[350px]  rounded-md p-4 top-0">
         <div className="flex flex-col gap-4">
-          <Button
-            variant="outline"
-            onClick={() =>
-              loginAsGuest({ username: "flash", password: "speedster" })
-            }
-          >
-            Login as Flash
-          </Button>
-          <Button
-            variant="outline"
-            onClick={() =>
-              loginAsGuest({ username: "greenarrow", password: "arrow123" })
-            }
-          >
-            Login as Green Arrow
-          </Button>
-          <Button
-            variant="outline"
-            onClick={() =>
-              loginAsGuest({ username: "batman", password: "iambatman" })
-            }
-          >
-            Login as Batman <img src={batIcon} alt="" className="h-[20px]" />
-          </Button>
-          <Button
-            variant="outline"
-            onClick={() =>
-              loginAsGuest({ username: "superman", password: "manofsteel" })
-            }
-          >
-            Login as Superman
-          </Button>
-          <Button
-            variant="outline"
-            onClick={() =>
-              loginAsGuest({ username: "batman", password: "iambatman" })
-            }
-          >
-            Sign up as a new hero
-          </Button>
-          <Button variant="outline" onClick={() => setShowList(!showList)}>
-            X
-          </Button>
+          {dataState.users?.map((user) => (
+            <Button
+              variant="outline"
+              key={user._id}
+              onClick={() =>
+                loginAsGuest({
+                  username: user?.username,
+                  password: user?.password,
+                })
+              }
+            >
+              Login as {user?.username}
+            </Button>
+          ))}
         </div>
       </ScrollArea>
     </div>

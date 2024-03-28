@@ -71,7 +71,6 @@ const EditProfileModal = ({
             <Button type="submit">Update Profile</Button>{" "}
           </form>
         </DialogDescription>
-        <DialogFooter></DialogFooter>
       </DialogContent>
     </Dialog>
   );

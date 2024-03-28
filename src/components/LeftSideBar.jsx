@@ -38,7 +38,7 @@ const LeftSideBar = () => {
   ];
 
   return (
-    <div className="flex-col hidden md:flex">
+    <div className="flex-col hidden md:flex ">
       <ul className="flex flex-col gap-4 px-2 justify-center rounded-sm">
         {menuItems.map((item, index) => {
           const isActive = location.pathname === item.path;
@@ -56,7 +56,7 @@ const LeftSideBar = () => {
             >
               <i className={item.icon}></i>
               <span
-                className={`pl-2 hidden md:hidden lg:inline ${
+                className={`pl-2 hidden  lg:inline text-14px lg:w-[16px]${
                   isActive ? "" : ""
                 }`}
               >
@@ -66,7 +66,7 @@ const LeftSideBar = () => {
           );
         })}
       </ul>
-      <PostModal />
+      <PostModal title={"Super Post"} />
       <UserDetails user={user} />
     </div>
   );

@@ -70,9 +70,19 @@ const DataProvider = ({ children }) => {
     }
   }, [authState?.token]);
 
+  useEffect(() => {
+    getUsers();
+  }, []);
+
   return (
     <DataContext.Provider
-      value={{ dataState, dataDispatch, setSortBy, sortBy, showLoader }}
+      value={{
+        dataState,
+        dataDispatch,
+        setSortBy,
+        sortBy,
+        showLoader,
+      }}
     >
       {children}
     </DataContext.Provider>

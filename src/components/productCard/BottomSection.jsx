@@ -19,7 +19,7 @@ const BottomSection = ({
   const { authState } = useAuthContext();
 
   return (
-    <div className="flex items-center justify-between  w-full pr-2">
+    <div className="flex items-center justify-between  w-full mt-2 border-t-2 px-4 pr-5 py-2 pb-0">
       <div
         className="cursor-pointer  p-2 rounded-sm"
         onClick={() => {

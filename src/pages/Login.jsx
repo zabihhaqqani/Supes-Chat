@@ -83,15 +83,7 @@ const Login = () => {
           </span>
         </div>
         <Button type="submit">Login</Button>
-        <Button onClick={() => navigate("/signup")}> Join the league ▶</Button>
       </form>
-      <Button
-        onClick={() => setShowList(!showList)}
-        className="mt-3 w-[85%] md:w-[350px] lg:w-[400px]"
-      >
-        Login as a Hero
-      </Button>
-
       {showList && (
         <HeroList
           loginAsGuest={loginAsGuest}
@@ -99,6 +91,19 @@ const Login = () => {
           showList={showList}
         />
       )}
+      <Button
+        onClick={() => setShowList(!showList)}
+        className="mt-3 w-[85%] md:w-[350px] lg:w-[400px]"
+      >
+        Login as a Hero
+      </Button>
+      <Button
+        className="mt-3 w-[85%] md:w-[350px] lg:w-[400px]"
+        onClick={() => navigate("/signup")}
+      >
+        {" "}
+        Join the league ▶
+      </Button>
     </div>
   );
 };

@@ -1,24 +1,21 @@
 import { useState } from "react";
-import { useAuthContext } from "../context/authContext";
-import { createPostHandler } from "../utils/createPostHandler";
-import { useDataContext } from "../context/dataContext";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import AvatarIcon from "./AvatarIcon";
-import { Button } from "./ui/button";
 import {
   Dialog,
   DialogContent,
   DialogDescription,
-  DialogHeader,
   DialogFooter,
-  DialogTitle,
+  DialogHeader,
   DialogTrigger,
 } from "../components/ui/dialog";
-import { Label } from "./ui/label";
-import { Input } from "./ui/input";
+import { useAuthContext } from "../context/authContext";
+import { useDataContext } from "../context/dataContext";
+import { createPostHandler } from "../utils/createPostHandler";
+import AvatarIcon from "./AvatarIcon";
+import { Button } from "./ui/button";
 
-const PostModal = () => {
+const PostModal = ({ title }) => {
   const { authState } = useAuthContext();
   const { dataDispatch, dataState } = useDataContext();
   const [postContent, setPostContent] = useState("");
@@ -43,7 +40,9 @@ const PostModal = () => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="secondary">Power Post</Button>
+        <Button variant="secondary">
+          {title || <i className="fas fa-plus-circle"></i>}
+        </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>

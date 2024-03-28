@@ -86,13 +86,13 @@ const AuthProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    if (localStorageData?.user?.username === "adarshbalika") {
-      authDispatch({ type: "SET_USER", payload: localStorageData?.user });
-      authDispatch({ type: "SET_TOKEN", payload: localStorageData?.token });
-      localStorage.removeItem("userData");
-    } else {
-      userLogout();
-    }
+    // if (localStorageData?.user?.username === "adarshbalika") {
+    //   authDispatch({ type: "SET_USER", payload: localStorageData?.user });
+    //   authDispatch({ type: "SET_TOKEN", payload: localStorageData?.token });
+    //   localStorage.removeItem("userData");
+    // } else {
+    //   userLogout();
+    // }
   }, []);
 
   console.log();

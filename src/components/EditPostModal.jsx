@@ -47,11 +47,8 @@ const EditPostModal = ({
   return (
     <div>
       <Dialog>
-        <DialogTrigger
-          // onClick={onClose}
-          className="border p-2 w-[60px] rounded-sm"
-        >
-          Edit
+        <DialogTrigger className="w-[100px] rounded-sm ">
+          <Button variant="secondary">Edit</Button>
         </DialogTrigger>
         <DialogContent className="sm:max-w-[400px]">
           <DialogHeader>

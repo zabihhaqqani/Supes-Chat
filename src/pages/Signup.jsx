@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "../context/authContext";
 import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
+import { toast } from "../components/ui/use-toast";
 
 export function SignUp() {
   const navigate = useNavigate();
@@ -31,7 +32,10 @@ export function SignUp() {
       !userDetails?.confirmPassword.trim()
     ) {
     } else if (userDetails?.password !== userDetails?.confirmPassword) {
-      alert("Passwords Do not Match!");
+      toast({
+        variant: "destructive",
+        title: "Passwords Do not Match!",
+      });
     } else {
       userSignup(userDetails);
     }

@@ -24,6 +24,7 @@ const UserProfileCard = ({ userProfile }) => {
 
   const onClose = () => setModalState(false);
 
+  console.log(dataState);
   return (
     <div
       className="p-2 bg-cover lg:w-[450px] w-full flex justify-center flex-col"

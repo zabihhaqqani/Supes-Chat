@@ -29,17 +29,13 @@ const MobileLeftSideBar = () => {
       icon: "fa-solid fa-heart fa-lg",
       label: "Liked Posts",
     },
-    {
-      path: `/user/${user?.username}`,
-      icon: "fas fa-user fa-lg",
-      label: "Profile",
-    },
+
     { path: "/login", icon: "fas fa-sign-out-alt fa-lg", label: "Logout" },
   ];
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 md:hidden py-3 z-10">
-      <ul className="flex justify-between py-4 px-4">
+    <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 md:hidden  z-30 ">
+      <ul className="flex justify-between py-4 px-2 items-center z-20">
         {menuItems.map((item, index) => {
           const isActive = location.pathname === item.path;
           return (
@@ -58,6 +54,7 @@ const MobileLeftSideBar = () => {
             </li>
           );
         })}
+        <PostModal />
       </ul>
     </div>
   );

@@ -8,7 +8,7 @@ const Comments = ({ comments }) => {
     <div>
       {comments?.length > 0 ? (
         <div>
-          <h3 style={{ textAlign: "center" }}>Comments</h3>
+          <h3 className="text-center">Comments</h3>
           {comments?.map((data) => {
             const { _id, username, text } = data;
             return (
@@ -26,9 +26,7 @@ const Comments = ({ comments }) => {
                   )}
                 </div>
                 <div className="flex flex-col">
-                  <p>
-                    <strong>{username}</strong>
-                  </p>
+                  <p className="font-semibold">{username}</p>
                   <p>{text}</p>
                 </div>
               </div>
@@ -36,7 +34,7 @@ const Comments = ({ comments }) => {
           })}
         </div>
       ) : (
-        <div className="comments-container">
+        <div>
           <h3>No Comments Yet!</h3>
         </div>
       )}

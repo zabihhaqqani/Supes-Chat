@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import SuggestedUser from "./SuggestedUser";
 import { useDataContext } from "../context/dataContext";
 import { useAuthContext } from "../context/authContext";
+import { ScrollArea } from "./ui/scroll-area";
 
 function RightSideBar() {
   const { dataState, dataDispatch } = useDataContext();
@@ -33,12 +34,14 @@ function RightSideBar() {
     handleClearClick();
   }, [username]);
   return (
-    <div className="flex-col rounded-sm h-fit items-center gap-2 p-3 lg:flex  hidden transition-all">
+    <div className="flex-col rounded-sm h-fit items-center gap-2  lg:flex  hidden transition-all">
       <h3 className="font-bold text-lg">Suggested Users</h3>
       <div className="flex flex-col">
-        {suggestedUsers?.map((user) => {
-          return <SuggestedUser key={user?._id} user={user} />;
-        })}
+        <ScrollArea className="lg:h-[500px]  rounded-md">
+          {suggestedUsers?.map((user) => {
+            return <SuggestedUser key={user?._id} user={user} />;
+          })}
+        </ScrollArea>
       </div>
     </div>
   );

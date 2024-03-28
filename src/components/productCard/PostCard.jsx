@@ -7,6 +7,7 @@ import Comments from "../Comments";
 import EditPostModal from "../EditPostModal";
 import BottomSection from "./BottomSection";
 import TopSection from "./TopSection";
+import moment from "moment";
 
 const PostCard = ({ post, showComments }) => {
   const { dataDispatch, dataState } = useDataContext();
@@ -37,7 +38,7 @@ const PostCard = ({ post, showComments }) => {
   );
 
   return (
-    <div className="lg:w-[450px] md:-[500px] flex flex-col gap-4  border p-4 m-1 rounded-lg">
+    <div className="lg:w-[450px] md:w-[450px] flex flex-col gap-4  border my-3 rounded-lg p-3 cursor-pointer lg:mx-0 mx-4 w-[90vw] ">
       <TopSection
         username={username}
         userData={userData}
@@ -46,13 +47,14 @@ const PostCard = ({ post, showComments }) => {
         content={content}
       />
 
-      <p className="" onClick={() => navigate(`/post/${_id}`)}>
-        {content}
-      </p>
+      {/* middle section */}
+      <p className="text-[12px]">{moment(createdAt).format("LL")}</p>
+
+      <p onClick={() => navigate(`/post/${_id}`)}>{content}</p>
       <div className="rounded-sm">
         {mediaURL ? (
           <img
-            className="rounded-sm object-cover"
+            className="rounded-sm "
             src={mediaURL}
             alt="img"
             onClick={() => navigate(`/post/${_id}`)}
@@ -60,6 +62,7 @@ const PostCard = ({ post, showComments }) => {
         ) : (
           ""
         )}
+
         <BottomSection
           likedPosts={likedPosts}
           likes={likes}

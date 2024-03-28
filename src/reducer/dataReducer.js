@@ -1,4 +1,4 @@
-const dataReducer = (state,action) => {
+const dataReducer = (state, action) => {
   switch (action.type) {
     case "SET_USER_POSTS":
       return {
@@ -41,12 +41,13 @@ const dataReducer = (state,action) => {
       return {
         ...state,
         users: state?.users?.map((user) =>
-          action.payload?._id === user._id ? action.payload  : user
+          action.payload?._id === user._id ? action.payload : user
         ),
       };
+
     default:
       return state;
   }
-}
+};
 
-export default dataReducer
+export default dataReducer;

@@ -37,14 +37,17 @@ const TopSection = ({ username, userData, _id, createdAt, content }) => {
         <AvatarIcon username={username} avatar={userData?.avatar} />
 
         <div>
-          <p
-            onClick={() => {
-              navigate(`/user/${username}`);
-            }}
-            className="font-[400]"
-          >
-            {`${userData?.firstName} ${userData?.lastName} `}
-          </p>
+          <div className="flex items-center gap-6">
+            <p
+              onClick={() => {
+                navigate(`/user/${username}`);
+              }}
+              className="font-[400]"
+            >
+              {`${userData?.firstName} ${userData?.lastName} `}
+            </p>
+          </div>
+
           <span
             onClick={() => {
               navigate(`/user/${username}`);
@@ -56,11 +59,10 @@ const TopSection = ({ username, userData, _id, createdAt, content }) => {
         </div>
       </div>
 
-      <div className="flex flex-col">
-        <p className="text-sm">{moment(createdAt).format("LL")}</p>
+      <div className="flex flex-col ">
         <div>
           {showOptions && (
-            <div className="absolute top-5 right-0 bg-white text-black border  border-black flex flex-col items-center gap-3 p-3 rounded-sm w-[100px]">
+            <div className="absolute top-0 right-0 bg-white text-black border  border-black flex flex-col items-center gap-3 p-3 rounded-sm w-[120px]">
               <span
                 className="cursor-pointer absolute  right-0 top-[-3px] text-lg"
                 onClick={() => handleCloseModal()}
@@ -84,16 +86,15 @@ const TopSection = ({ username, userData, _id, createdAt, content }) => {
               {delteablePosts && (
                 <h4 onClick={() => setShowOptions(!showOptions)}>
                   {showOptions && (
-                    <div className="cursor-pointer">
-                      <p
-                        onClick={() =>
-                          deletePostHandler(_id, authState?.token, dataDispatch)
-                        }
-                        className="border p-2  w-[60px] rounded-sm"
-                      >
-                        Delete
-                      </p>
-                    </div>
+                    <Button
+                      variant="secondary"
+                      className="cursor-pointer"
+                      onClick={() =>
+                        deletePostHandler(_id, authState?.token, dataDispatch)
+                      }
+                    >
+                      Delete
+                    </Button>
                   )}
                 </h4>
               )}
@@ -131,7 +132,7 @@ const TopSection = ({ username, userData, _id, createdAt, content }) => {
             </div>
           )}
         </div>
-        <div className="absolute right-0 top-5">
+        <div className="flex gap-3 right-0 top-0">
           {!showOptions && (
             <i
               className="fa-solid fa-ellipsis"
