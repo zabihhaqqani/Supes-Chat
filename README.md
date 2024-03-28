@@ -3,7 +3,7 @@
 
 A Social Media application to login as a SuperHero from DC Comics. 
 
-# Live Preview: [cyber-chat](https://cyber-chat-media.netlify.app/)
+# Live Preview: [Supe-Chat](https://cyber-chat-media.netlify.app/)
 
 ![image](https://github.com/zabihhaqqani/Supes-Chat/assets/53895282/d2ab77f8-6fcd-452c-b3e4-86af09bb9e64)
 
@@ -49,6 +49,7 @@ $ npm start
 
 - Like / Unlike a Post
 - Add / Remove bookmark on a post
+- Dark / Light Theme
 
 - Delete your posts
 
