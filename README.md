@@ -1,17 +1,17 @@
 
-# Supe Chat
+# Supes Chat
 
 A Social Media application to login as a SuperHero from DC Comics. 
 
-### Live Preview: [Supe-Chat](https://cyber-chat-media.netlify.app/)
+### Live Preview: [Supes-Chat](https://supes-chat.vercel.app)
 
 ![image](https://github.com/zabihhaqqani/Supes-Chat/assets/53895282/d2ab77f8-6fcd-452c-b3e4-86af09bb9e64)
 
 ## How to install and run locally?
 
 ```
-$ git clone https://github.com/zabihhaqqani/cyber-chat.git
-$ cd cyber-chat
+$ git clone https://github.com/zabihhaqqani/supes-chat.git
+$ cd supes-chat
 $ npm install
 $ npm start
 ```
