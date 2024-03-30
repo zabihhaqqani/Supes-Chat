@@ -54,7 +54,7 @@ const PostCard = ({ post, showComments }) => {
       <div className="rounded-sm">
         {mediaURL ? (
           <img
-            className="rounded-sm "
+            className="rounded-sm object-cover max-h-[350px] w-full"
             src={mediaURL}
             alt="img"
             onClick={() => navigate(`/post/${_id}`)}

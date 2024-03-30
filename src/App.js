@@ -14,13 +14,19 @@ import Login from "./pages/Login";
 import { SignUp } from "./pages/Signup";
 import UserProfilePage from "./pages/UserProfilePage";
 import { ToastContainer } from "react-toastify";
+import ScrollToTop from "./components/ScrollToTop";
+import { useEffect } from "react";
 
 function App() {
   const { authState } = useAuthContext();
 
   const { token } = authState;
+  useEffect(() => {
+    window.scrollTo(0, -10);
+  }, []);
   return (
     <div className="md:text-[16px]  text-[15px]">
+      {/* <ScrollToTop /> */}
       <Routes>
         <Route
           path="/"

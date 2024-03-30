@@ -1,9 +1,10 @@
+import { useNavigate } from "react-router-dom";
 import { useDataContext } from "../context/dataContext";
 import AvatarIcon from "./AvatarIcon";
 
 const Comments = ({ comments }) => {
   const { dataState } = useDataContext();
-
+  const navigate = useNavigate();
   return (
     <div>
       {comments?.length > 0 ? (
@@ -25,7 +26,12 @@ const Comments = ({ comments }) => {
                     )
                   )}
                 </div>
-                <div className="flex flex-col">
+                <div
+                  className="flex flex-col"
+                  onClick={() => {
+                    navigate(`/user/${username}`);
+                  }}
+                >
                   <p className="font-semibold">{username}</p>
                   <p>{text}</p>
                 </div>

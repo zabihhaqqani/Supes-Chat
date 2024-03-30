@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDataContext } from "../context/dataContext";
 import AvatarIcon from "./AvatarIcon";
@@ -17,8 +17,11 @@ const Search = () => {
       lastName.toLowerCase()?.includes(searchTerm?.toLowerCase()?.trim())
   );
 
+  useEffect(() => {
+    setSearchTerm("");
+  }, [navigate]);
   return (
-    <div>
+    <div className="mr-9">
       <div>
         <Input
           placeholder="Search Hero"

@@ -39,7 +39,7 @@ function Home() {
   return (
     <div>
       <Navbar />
-      <div className="flex justify-center gap-[50px]">
+      <div className="flex justify-center gap-[70px]">
         <LeftSideBar
           onClick={() => dataDispatch({ type: "SHOW_OPTIONS", payload: false })}
         />
