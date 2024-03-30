@@ -40,7 +40,7 @@ const EditProfileModal = ({
     toast.success("Profile edited!");
   };
   return (
-    <AlertDialog className="w-[250px]">
+    <AlertDialog className="w-[250px] p-0">
       <AlertDialogTrigger>
         <Button
           onClick={() => closeModal()}
@@ -52,7 +52,7 @@ const EditProfileModal = ({
       <AlertDialogContent>
         <AlertDialogHeader>
           <AlertDialogTitle>Edit Profile</AlertDialogTitle>
-          <AlertDialogDescription className="sm:max-w-[425px] flex flex-col gap-3">
+          <AlertDialogDescription className="flex flex-col gap-3">
             <AvatarIcon username={data?.username} avatar={data?.avatar} />
             <label htmlFor="bio">Bio: </label>
             <Input

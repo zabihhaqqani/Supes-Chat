@@ -50,8 +50,7 @@ const PostModal = ({ title }) => {
       </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>
-          <AlertDialogTitle>Post your heroic day/ adventrue!</AlertDialogTitle>
-          <AlertDialogDescription className="sm:max-w-[425px]">
+          <AlertDialogDescription>
             <AvatarIcon
               username={userData?.username}
               avatar={userData?.avatar}
