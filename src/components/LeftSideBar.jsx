@@ -11,11 +11,6 @@ const LeftSideBar = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const navigateAndLogout = (path) => {
-    navigate(path);
-    userLogout();
-  };
-
   const menuItems = [
     { path: "/", icon: "fas fa-home fa-lg", label: "Home" },
     { path: "/explore", icon: "fa-solid fa-compass fa-lg", label: "Explore" },
@@ -36,6 +31,10 @@ const LeftSideBar = () => {
     },
     { path: "/login", icon: "fas fa-sign-out-alt fa-lg", label: "Logout" },
   ];
+  const navigateAndLogout = (path) => {
+    navigate(path);
+    userLogout();
+  };
 
   return (
     <div className="flex-col hidden md:flex ">

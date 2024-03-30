@@ -62,7 +62,7 @@ const TopSection = ({ username, userData, _id, createdAt, content }) => {
       <div className="flex flex-col ">
         <div>
           {showOptions && (
-            <div className="absolute top-0 right-0 bg-white text-black border  border-black flex flex-col items-center gap-3 p-3 rounded-sm w-[120px]">
+            <div className="absolute top-1 right-0 bg-white text-black border  border-black flex flex-col items-center gap-3 p-3 rounded-sm w-[120px]">
               <span
                 className="cursor-pointer absolute  right-0 top-[-3px] text-lg"
                 onClick={() => handleCloseModal()}
@@ -101,6 +101,7 @@ const TopSection = ({ username, userData, _id, createdAt, content }) => {
               {!delteablePosts && showOptions && (
                 <Button
                   className="follow-btn"
+                  variant="secondary"
                   onClick={(e) => {
                     const followed = userFollowed(
                       dataState?.users,

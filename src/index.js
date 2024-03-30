@@ -13,15 +13,15 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 makeServer();
 
 root.render(
-  <Router>
-    <AuthProvider>
-      <DataProvider>
-        <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
+  <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
+    <Router>
+      <AuthProvider>
+        <DataProvider>
           <App />
-        </ThemeProvider>
-      </DataProvider>
-    </AuthProvider>
-  </Router>
+        </DataProvider>
+      </AuthProvider>
+    </Router>
+  </ThemeProvider>
 );
 
 reportWebVitals();

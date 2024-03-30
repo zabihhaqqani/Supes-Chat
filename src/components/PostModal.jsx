@@ -2,13 +2,17 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTrigger,
-} from "../components/ui/dialog";
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "../components/ui/alert-dialog";
+
 import { useAuthContext } from "../context/authContext";
 import { useDataContext } from "../context/dataContext";
 import { createPostHandler } from "../utils/createPostHandler";
@@ -38,23 +42,23 @@ const PostModal = ({ title }) => {
     (user) => user?.username === authState?.user?.username
   );
   return (
-    <Dialog>
-      <DialogTrigger asChild>
-        <Button variant="secondary">
-          {title || <i className="fas fa-plus-circle"></i>}
+    <AlertDialog>
+      <AlertDialogTrigger>
+        <Button className="m-2">
+          {title || <i className="fas fa-plus-circle"></i>}{" "}
         </Button>
-      </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px]">
-        <DialogHeader>
-          {/* <DialogTitle>Post</DialogTitle> */}
-          <DialogDescription className=" gap-3">
+      </AlertDialogTrigger>
+      <AlertDialogContent>
+        <AlertDialogHeader>
+          <AlertDialogTitle>Post your heroic day/ adventrue!</AlertDialogTitle>
+          <AlertDialogDescription className="sm:max-w-[425px]">
             <AvatarIcon
               username={userData?.username}
               avatar={userData?.avatar}
             />
             <textarea
               onChange={(e) => setPostContent(e.target.value)}
-              className="border resize-none p-2 w-full my-3 rounded-sm"
+              className="border resize-none w-full my-3 rounded-sm p-4"
               placeholder="What is happening?"
               value={postContent}
               name=""
@@ -62,20 +66,20 @@ const PostModal = ({ title }) => {
               cols="40"
               rows="8"
             ></textarea>{" "}
-          </DialogDescription>
-        </DialogHeader>
-
-        <DialogFooter>
-          <Button
+          </AlertDialogDescription>
+        </AlertDialogHeader>
+        <AlertDialogFooter>
+          <AlertDialogCancel>Cancel</AlertDialogCancel>
+          <AlertDialogAction
             onClick={() => postBtnHandler()}
             disabled={postContent === "" ? true : false}
             type="submit"
           >
             Super Post
-          </Button>
-        </DialogFooter>
-      </DialogContent>
-    </Dialog>
+          </AlertDialogAction>
+        </AlertDialogFooter>
+      </AlertDialogContent>
+    </AlertDialog>
   );
 };
 
