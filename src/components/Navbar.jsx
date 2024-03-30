@@ -1,8 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "../context/authContext";
 import { useDataContext } from "../context/dataContext";
-import Search from "./Search";
 import { ModeToggle } from "./ui/mode-toggle";
+import Logo from "../assets/favicon2.png";
+import Search from "./Search";
 
 const Navbar = () => {
   const { authState } = useAuthContext();
@@ -11,9 +12,9 @@ const Navbar = () => {
 
   return (
     <div className="flex justify-center p-2 items-center shadow-md mb-2 ">
-      <div className="w-[1000px] flex justify-between">
+      <div className="w-[1000px] flex justify-between items-center">
         <div onClick={() => navigate("/")}>
-          <h3 className="text-[22px] font-black">SC</h3>
+          <img src={Logo} alt="logo" className="h-[60px]" />
         </div>
 
         <Search />
