@@ -1,17 +1,12 @@
-import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 const ScrollToTop = () => {
-  const navigate = useNavigate();
+  const { pathname } = useLocation();
 
   useEffect(() => {
-    const unlisten = navigate((location) => {
-      window.scrollTo(0, 0);
-    });
-    return () => {
-      unlisten();
-    };
-  }, [navigate]);
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   return null;
 };

@@ -20,18 +20,19 @@ const Search = () => {
   useEffect(() => {
     setSearchTerm("");
   }, [navigate]);
+
   return (
     <div className="mr-9">
       <div>
         <Input
           placeholder="Search Hero"
-          className="w-[230px] focus:outline-none"
+          className="w-[100%] focus:outline-none"
           type="text"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
       </div>
-      <div className="absolute bg-white text-black rounded-sm  z-[100] w-[230px]">
+      <div className="absolute bg-white text-black rounded-sm  z-[100] w-[204px]">
         {searchTerm &&
           filteredSearch?.map(
             ({ _id, username, firstName, lastName, avatar }) => (

@@ -35,7 +35,7 @@ const MobileLeftSideBar = () => {
 
   return (
     <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 md:hidden  z-30 ">
-      <ul className="flex justify-between py-4 px-2 items-center z-20">
+      <ul className="flex justify-between  px-0 items-center z-20">
         {menuItems.map((item, index) => {
           const isActive = location.pathname === item.path;
           return (

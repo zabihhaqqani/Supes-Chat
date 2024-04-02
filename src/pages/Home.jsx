@@ -45,10 +45,10 @@ function Home() {
         />
 
         <section className="mt-[6px]">
-          <ScrollArea className="lg:h-[90vh]  rounded-md lg:w-[500px] md:w-[500px] ">
+          <ScrollArea className="lg:h-[90vh]  rounded-md lg:w-[500px] md:w-[500px] md:h-[90vh] w-full lg:mb-0 md:mb-0 mb-[55px]">
             {isHomePage && (
-              <div className="flex items-center justify-around my-2 text-sm">
-                <h3 className="w-[200px]">{sortBy} Posts</h3>
+              <div className="flex items-center justify-around my-2 text-sm px-0">
+                <h3 className="">{sortBy} Posts</h3>
 
                 <select
                   className="px-3 py-2 border text-black rounded-lg"
